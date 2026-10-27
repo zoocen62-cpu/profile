@@ -1,0 +1,12 @@
+{
+  "name": "personal-profile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/server.mjs",
+    "dev": "node --watch scripts/server.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

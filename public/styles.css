@@ -1,0 +1,37 @@
+﻿/* Stitch 디자인을 유지하면서 접근성과 모바일 레이아웃을 보완합니다. */
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { overflow-x: clip; }
+section { scroll-margin-top: 88px; }
+a { text-decoration: none; }
+:focus-visible { outline: 3px solid #3742fa; outline-offset: 5px; }
+.skip-link { position: fixed; top: -80px; left: 16px; z-index: 100; padding: 12px 20px; background: white; color: #111ae4; border-radius: 8px; }
+.skip-link:focus { top: 12px; }
+.menu-toggle { display: none; border: 1px solid #c5c5d9; background: white; color: #0b1c30; border-radius: 10px; width: 40px; height: 40px; font-size: 22px; cursor: pointer; }
+.mobile-menu { padding: 8px 20px 16px; background: #f8f9ff; border-top: 1px solid #e5eeff; }
+.mobile-menu:not([hidden]) { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.mobile-menu a { text-align: center; padding: 12px 4px; border-radius: 8px; font-size: 14px; }
+nav a[aria-current="page"] { color: #111ae4; font-weight: 700; }
+.mobile-menu a[aria-current="page"] { background: #e5eeff; }
+.project-card { color: inherit; cursor: pointer; }
+.example-label { display: inline-block; vertical-align: middle; font-size: 12px; font-weight: 600; letter-spacing: 0; padding: 5px 10px; background: #e5eeff; border-radius: 999px; color: #111ae4; }
+.email-address { overflow-wrap: anywhere; min-width: 0; }
+.email-address:hover { color: #111ae4; text-decoration: underline; }
+input, select, textarea { min-width: 0; max-width: 100%; }
+[hidden] { display: none !important; }
+@media (max-width: 767px) {
+  .menu-toggle { display: inline-grid; place-items: center; }
+  header > div > div:first-child { min-width: 0; gap: 6px; }
+  header > div > div:first-child > img { display: none; }
+  header > div > div:first-child > a { font-size: 16px; }
+  header > div > div:last-child { gap: 8px; }
+  #home h1 { font-size: clamp(28px, 7.4vw, 40px); line-height: 1.4; word-break: keep-all; }
+  #home > div > div:first-child > div:first-child { flex-wrap: wrap; row-gap: 6px; }
+  #home .aspect-\[4\/5\] { max-width: 340px; }
+  h2 { word-break: keep-all; }
+  footer > div > div:last-child { flex-wrap: wrap; justify-content: center; }
+}
+@media (min-width: 768px) { #mobileMenu { display: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
